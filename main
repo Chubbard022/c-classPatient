@@ -1,0 +1,200 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <windows.h>
+#include <cctype>
+
+using namespace std;
+
+
+class Patient
+{
+    private:
+       string firstName;
+        string middle;
+        string last;
+        int age;
+        string gender;
+        double phoneNumber;
+        string email;
+        string street;
+        string city;
+        string state;
+        double zipCode;
+        
+    public:
+       
+        void setFirstName(string);
+        void setMiddle(string);
+        void setLast(string);
+        void setAge(int);
+        void setGender(string);
+        void setPhoneNumber(double);
+        void setEmail(string);
+        void setStreet(string);
+        void setCity(string);
+        void setState(string);
+        void setZipCode(double);
+        
+      
+        string getFirstName();
+        string getMiddle();
+        string getLast();
+        int getAge();
+        string getGender();
+        double getPhoneNumber();
+        string getEmail();
+        string getStreet();
+        string getCity();
+        string getState();
+        double getZipCode();
+                     
+};
+
+
+void Patient::setFirstName(string fname)
+{ firstName = fname; }
+
+void Patient::setMiddle(string m)
+{ middle = m; }
+
+void Patient::setLast(string l)
+{ last = l; }
+
+void Patient::setAge(int a)
+{ age = a; }
+
+void Patient::setGender(string g)
+{ gender = g; }
+
+void Patient::setPhoneNumber(double pn)
+{ phoneNumber = pn; }
+
+void Patient::setEmail(string e)
+{ email = e; }
+
+void Patient::setStreet(string st)
+{ street = st; }
+
+void Patient::setCity(string c)
+{ city = c; }
+
+void Patient::setState(string sta)
+{ state = sta; }
+
+void Patient::setZipCode(double zcode)
+{ zipCode = zcode; }
+
+
+string Patient::getFirstName()
+{ return firstName; }
+
+string Patient::getMiddle()
+{ return middle; }
+
+string Patient::getLast()
+{ return last; }
+
+int Patient::getAge()
+{ return age; }
+
+string Patient::getGender()
+{ return gender; }
+
+double Patient::getPhoneNumber()
+{ return phoneNumber; }
+
+string Patient::getEmail()
+{ return email; }
+
+string Patient::getStreet()
+{ return street; }
+
+string Patient::getCity()
+{ return city; }
+
+string Patient::getState()
+{ return state; }
+
+double Patient::getZipCode()
+{ return zipCode; }
+
+
+int main()
+{
+ 
+
+    Patient NewPatient;
+   
+        string first_Name;
+        string middle_Name;
+        string last_Name;
+        int Age;
+        string Gender;
+        double phone_Number;
+        string Email;
+        string Street;
+        string City;
+        string State;
+        double zip_Code;
+        
+        cout << "Enter First Name: ";
+	cin >> first_Name;
+	
+	cout << "\nEnter Middle Name: ";
+	cin >> middle_Name;
+	
+	cout << "\nEnter Last Name: ";
+	cin >> last_Name;
+	
+	cout << "\nEnter Age: ";
+	cin >> Age;
+
+	cout << "\nEnter Male or Female: ";
+	cin >> Gender;
+	
+	cout << "\nEnter Phone Number: ";
+	cin >> phone_Number;
+	
+	if(Age > 15)
+	{
+	cout << "\nEnter E-mail: ";
+	cin >> Email;
+	}
+	
+	cout << "\nEnter Street Address: ";
+	getline(cin, Street);
+	cin.ignore(256, '\n');
+    
+    cout << "\nEnter City: ";
+	cin >> City;
+	
+	cout << "\nEnter State: ";
+	cin >> State;
+	
+	cout << "\nEnter Zip Code: ";
+	cin >> zip_Code;	
+	
+	NewPatient.setFirstName(first_Name);
+	NewPatient.setMiddle(middle_Name);
+	NewPatient.setLast(last_Name);
+	NewPatient.setAge(Age);
+	NewPatient.setGender(Gender);
+	NewPatient.setPhoneNumber(phone_Number);
+	NewPatient.setEmail(Email);
+	NewPatient.setStreet(Street);
+	NewPatient.setCity(City);
+	NewPatient.setState(State);
+	NewPatient.setZipCode(zip_Code);
+	
+	//cout << "\nPatient Information: \n\n"
+	cout << "Full Name:  " << NewPatient.getFirstName() << " " << NewPatient.getMiddle() << " " 
+	     << NewPatient.getLast() << endl;
+	cout << "Patient Address: " << NewPatient.getStreet() << " " << NewPatient.getCity() << " " 
+         << NewPatient.getState() << " " << fixed << setprecision(0) <<  NewPatient.getZipCode() << endl;
+	cout << "Age: " << NewPatient.getAge() << " Gender: " << NewPatient.getGender() << endl;
+	cout << "Phone Number: " << fixed << setprecision(0) <<  NewPatient.getPhoneNumber() << endl;
+	cout << "Email Address: " << NewPatient.getEmail() << endl;
+
+return 0;
+}
